@@ -1,0 +1,406 @@
+
+
+
+body {
+  background-color: #1e2432;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  box-shadow: 0;
+ 
+}
+.ticket-page{
+  text-align: center;
+  background-color: #08132e;
+}
+.ticket-banner{
+  height: 100vh;  
+  background: url('https://www.techopedia.com/wp-content/uploads/2024/02/1706884145604_processed.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: #FFCC00;
+  font-weight: 600;
+
+}
+.ticket-banner h2 {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  background-color: #FFCC00;
+  padding-inline: 10px;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.tickets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+  gap: 30px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-block: 50px;
+
+}
+
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #2b3345;  */
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 2px solid #FFCC00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-card h2 {
+  font-size: 26px; 
+  color: #FFCC00;
+  margin-bottom: 20px; 
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.ticket-card span {
+  font-size: 18px;
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.ticket-card p {
+  font-size: 22px;
+  color: #c2de77; 
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.ticket-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket-card li {
+  font-size: 16px;
+  text-align: left;
+  color: #ffffff;
+  background: url('https://img.icons8.com/material-rounded/15/ffcc00/ok.png') no-repeat left center;
+  background-size: 15px 15px;
+  padding-left: 25px;
+  /* margin-bottom: 10px; */
+}
+
+.ticket-card button {
+  background-color: #FFCC00;
+  border: none;
+  padding: 12px 20px;
+  color: #1e2432; 
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: auto; 
+  transition: background-color 0.3s ease;
+}
+
+.ticket-card button:hover {
+  background-color: #ffdb4d;
+}
+
+.ticket-card button:focus {
+  outline: none;
+}
+
+
+.discount-section {
+  padding: 0px 20px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+h2 {
+  font-size: 22px;
+  color: #FFCC00;
+  margin-bottom: 10px;
+  letter-spacing: 1.2px;
+  padding-block: 10px;
+}
+.discount-section ul{
+  list-style: none;
+  padding-left: 0;
+}
+.discount-section ul li {
+  font-size: 22px;
+  text-align: left;
+  color: #ffffff;
+  background: url('https://img.icons8.com/material-rounded/15/ffcc00/ok.png') no-repeat left center;
+  background-size: 15px 15px;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.discount-section p {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.discount-section button {
+  background-color: #FFCC00;
+  border: none;
+  padding: 12px 30px;
+  color: #1e2432;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.discount-section button:hover {
+  background-color: #ffdb4d;
+}
+
+.discount-section button:focus {
+  outline: none;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, #ffdb4d, #FFCC00);
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+footer{
+  width: 100%;
+  background-color: #FFCC00;
+  padding-block: 25px;
+}
+@media (max-width: 768px) {
+  .tickets-container {
+    grid-template-columns: 1fr;
+  }
+  .ticket-card {
+    padding: 15px;
+  }
+
+  .ticket-card h2 {
+    font-size: 22px;
+  }
+
+  .ticket-card p {
+    font-size: 20px;
+  }
+.ticket-card li {
+  font-size: 14px;
+}
+.discount-section ul li {
+  font-size: 14px;
+}
+
+}
+
+/* 
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #08132e;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ticket-page {
+  text-align: center;
+  background-color: #08132e; 
+}
+
+.ticket-page h2 {
+  font-size: 40px;
+  color: #FFCC00;
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+}
+
+.tickets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px; 
+}
+
+.ticket-card {
+  background-color: #2b3345; 
+  border-radius: 12px;
+  border: 2px solid #FFCC00;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-card h2 {
+  font-size: 26px;
+  color: #FFCC00;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.ticket-card span {
+  font-size: 18px;
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.ticket-card p {
+  font-size: 22px;
+  color: #c2de77; 
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.ticket-card ul, ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.ticket-card li {
+  font-size: 16px;
+  text-align: left;
+  color: #ffffff;
+  background: url('https://img.icons8.com/material-rounded/15/ffcc00/ok.png') no-repeat left center;
+  background-size: 15px 15px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.ticket-card button {
+  background-color: #FFCC00;
+  border: none;
+  padding: 12px 20px;
+  color: #1e2432; 
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-card button:hover {
+  background-color: #ffdb4d;
+}
+
+
+.discount-section {
+  padding: 0px 20px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.discount-section h2 {
+  font-size: 22px;
+  color: #FFCC00;
+  margin-bottom: 10px;
+  letter-spacing: 1.2px;
+}
+
+.discount-section ul li {
+  font-size: 22px;
+  text-align: left;
+  color: #ffffff;
+  background: url('https://img.icons8.com/material-rounded/15/ffcc00/ok.png') no-repeat left center;
+  background-size: 15px 15px;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.discount-section p {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.discount-section button {
+  background-color: #FFCC00;
+  border: none;
+  padding: 12px 30px;
+  color: #1e2432;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.discount-section button:hover {
+  background-color: #ffdb4d;
+}
+
+.discount-section button:focus {
+  outline: none;
+}
+footer{
+  width: 100%;
+  background-color: #FFCC00;
+  padding-block: 25px;
+}
+
+
+@media (max-width: 768px) {
+  .tickets-container {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .ticket-card {
+    background-color: #08132e; 
+    padding: 15px;
+  }
+
+  .ticket-card h2 {
+    font-size: 22px;
+  }
+
+  .ticket-card p {
+    font-size: 20px;
+  }
+}
+.ticket-card li {
+  font-size: 14px;
+}
+.discount-section ul li {
+  font-size: 14px;
+}
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, #ffdb4d, #FFCC00);
+  border-radius: 5px;
+  margin: 20px auto;
+} */
