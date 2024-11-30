@@ -19,14 +19,14 @@ const Award = () => {
     reasonsToApply: [
       {
         imgSrc:
-          "https://www.hlglobalcorp.com/storage/meta/AgZ4tzPEQTlAsovdMHRVg8Kf4B5sVX-metaQ2FyZWVyc19NZXRhSW1hZ2UuanBn-.jpg",
+          "https://kuber.ventures/wp-content/uploads/2024/09/1.jpg",
         title: "Celebrate and Acknowledge Team Effort",
         description:
           "Show appreciation for the relentless efforts of your team, recognizing their hard work to innovate with AI.",
       },
       {
         imgSrc:
-          "https://www.btcopys.com/wp-content/uploads/2017/05/4-btcopys-copier-machine-singapore-improve-productivity.jpg",
+          "https://www.umassmed.edu/globalassets/systems-and-psychosocial-advances-research-center/__2023-folders/decorative-images/teamwork-generic-and-diverse.jpg",
         title: "Inspire and Motivate",
         description:
           "Enhance team morale and attract top talent by showcasing your dedication to transformative innovation.",
@@ -41,14 +41,14 @@ const Award = () => {
 
       {
         imgSrc:
-          "https://syncproduc.b-cdn.net/wp-content/uploads/2023/02/cpro-min-scaled.jpg",
+          "https://media.licdn.com/dms/image/v2/D5612AQFMgZi_18IQDA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1659632275469?e=1738195200&v=beta&t=m7Bb6ODSLm6pZYOA6Y-0c1IupKqfB1JtVtG9zu7oXPY",
         title: "Get Recognition at the World's Largest AI Gathering",
         description:
           "Be recognized as an AI innovator and stand shoulder-to-shoulder with industry leaders as a finalist at the world's premier AI event.",
       },
       {
         imgSrc:
-          "https://www.edarabia.com/wp-content/uploads/2019/04/2015-quality-management-system-lead-implementer-doha-qatar.jpg",
+          "https://naiknaik.com/wp-content/uploads/2023/11/pexels-eduardo-romero-3649407-1024x683.jpg",
         title: "Global Promotion Package",
         description:
           "Winners receive extensive media exposure, an award logo, and a prestigious trophy to showcase your success.",
