@@ -94,7 +94,7 @@ const Award = () => {
             "url('https://media.licdn.com/dms/image/v2/C4D12AQHRdpT3XD12CQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649787353589?e=1738195200&v=beta&t=QZQxCP6MyIA_UiT9Dpv9z4GcvWlmQTaNoXQInZWMbNs')",
         }}
       >
-        <h1 className="md:p-24 p-5 pt-24 md-pt-0 text-3xl md:text-6xl font-Antonio font-semibold text-yellow-400 tracking-wide leading-10  w-1/2  
+        <h1 className="uppercase md:p-24 p-5 pt-24 md-pt-0 text-3xl md:text-6xl font-Antonio font-semibold text-yellow-400 tracking-wide leading-10  w-1/2  
         ">
           {title}
         </h1>
