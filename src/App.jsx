@@ -2,11 +2,13 @@
 import Award from './Components/Award'
 import Ticket from './Components/Ticket'
 import Information from './Components/Information'
+import Pass from "./Components/Pass";
 function App() {
 
   return(
     <>
-      <Information/>
+      <Pass/>
+      {/* <Information/> */}
       {/* <Award/> */}
       {/* <Ticket/> */}
     </>
