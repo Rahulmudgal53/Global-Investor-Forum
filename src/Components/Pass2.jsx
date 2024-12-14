@@ -156,7 +156,7 @@ const TicketSection = () => {
           {tickets.map((ticket, index) => (
             <div
               key={index}
-              className="bg-black p-6 rounded-lg shadow-lg text-center flex flex-col"
+              className="bg-black p-6 rounded-lg relative  shadow-lg text-center flex flex-col justify-between"
             >
               <h3 className="text-xl font-bold uppercase mb-4">
                 {ticket.title}
@@ -168,7 +168,7 @@ const TicketSection = () => {
                 {ticket.originalPrice}
               </p>
               <p className="text-sm mt-2">{ticket.discount}</p>
-              <button className="bg-yellow-500 border-b-4 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-orange-600 self-center">
+              <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-orange-600 self-center">
                 {ticket.buttonText}
               </button>
               <button
@@ -180,8 +180,8 @@ const TicketSection = () => {
                 {ticket.detailsText}
               </button>
               {openIncludes === index && (
-                <div className="flex flex-col mt-2 pl-2 rounded top-60 shadow-md z-10">
-                  {/* <div className="flex flex-row-reverse justify-between">
+                <div className="flex flex-col mt-4 bg-gray-800 pl-2 rounded absolute  top-0 shadow-md z-10">
+                  <div className="flex flex-row-reverse justify-between">
                   <button
                     className=" py-2 px-4 text-black font-bold bg-yellow-500 text-right "
                     onClick={() => setOpenIncludes(null)}
@@ -189,7 +189,7 @@ const TicketSection = () => {
                     X
                   </button>
                   <h4 className="flex-1 pt-2 text-lg font-bold ">Includes:</h4>
-                  </div> */}
+                  </div>
                   <ul className="list-disc pl-4 text-left">
                     {ticket.includes.map((item, itemIndex) => (
                       <li key={itemIndex} className="text-sm mt-1 p-2">
@@ -217,7 +217,7 @@ const TicketSection = () => {
                 {info.buttonText}
               </button>
             </div>
-          ))}
+          ))}  
         </div>
       </div>
     </section>
