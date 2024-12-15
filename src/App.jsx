@@ -9,8 +9,8 @@ function App() {
 
   return(
     <>
-      <Attendees/>
-      {/* <Pass/> */}
+      {/* <Attendees/> */}
+      <Pass/>
       {/* <Pass2/> */}
       {/* <Information/> */}
       {/* <Award/> */}

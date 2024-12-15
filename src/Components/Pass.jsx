@@ -94,7 +94,7 @@ const TicketSection = () => {
   const [openIncludes, setOpenIncludes] = useState(null);
 
   return (
-    <section className="py-12 bg-gradient-to-br from-purple-800 via-blue-700 to-indigo-900 text-white">
+    <section className="py-12 bg-black text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl lg:text-7xl font-Antonio uppercase font-bold text-center mb-6">
           Main Conference Tickets
@@ -154,10 +154,12 @@ const TicketSection = () => {
         {/* Ticket Cards */}
         <div className="pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tickets.map((ticket, index) => (
+            
             <div
               key={index}
-              className="bg-black p-6 rounded-lg shadow-lg text-center flex flex-col"
+              className=""
             >
+              <div className="bg-gradient-to-br from-purple-800 via-blue-700 to-indigo-900 p-6 rounded-lg flex flex-col text-center ">
               <h3 className="text-xl font-bold uppercase mb-4">
                 {ticket.title}
               </h3>
@@ -168,19 +170,23 @@ const TicketSection = () => {
                 {ticket.originalPrice}
               </p>
               <p className="text-sm mt-2">{ticket.discount}</p>
-              <button className="bg-yellow-500 border-b-4 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-orange-600 self-center">
+              <button className="bg-yellow-500 border-b-4 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-orange-600 self-center">
                 {ticket.buttonText}
               </button>
               <button
-                className="text-sm mt-2 self-center"
+                className=" font-semibold text-sm mt-2 self-center"
                 onClick={() =>
                   setOpenIncludes(openIncludes === index ? null : index)
                 }
               >
-                {ticket.detailsText}
-              </button>
-              {openIncludes === index && (
-                <div className="flex flex-col mt-2 pl-2 rounded top-60 shadow-md z-10">
+                {openIncludes === index ?"What's Included ↑": "What's Included ↓"}
+                
+              </button>             
+              </div>
+
+                <div className="bg-gradient-to-bl from-indigo-900 via-blue-700 to-purple-800 rounded-b-lg -mt-4">
+                {openIncludes === index && (
+                <div className="flex flex-col top-60 shadow-md z-10">
                   {/* <div className="flex flex-row-reverse justify-between">
                   <button
                     className=" py-2 px-4 text-black font-bold bg-yellow-500 text-right "
@@ -190,26 +196,32 @@ const TicketSection = () => {
                   </button>
                   <h4 className="flex-1 pt-2 text-lg font-bold ">Includes:</h4>
                   </div> */}
-                  <ul className="list-disc pl-4 text-left">
+                  <ul className=" px-6 text-left">
                     {ticket.includes.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-sm mt-1 p-2">
+                      <div key={itemIndex} className="">
+                        <li className=" border-t-2 border-dashed  text-sm mt-1 p-2">
                         {item}
                       </li>
+                      </div>
                     ))}
                   </ul>
                   
                 </div>
               )}
+                </div>
+
             </div>
           ))}
         </div>
+
+
 
         {/* Additional Info Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
           {additionalInfo.map((info, index) => (
             <div
               key={index}
-              className="bg-black p-6 rounded-lg shadow-lg flex flex-col justify-between"
+              className="bg-gradient-to-br from-purple-800 via-blue-700 to-indigo-900 p-6 rounded-lg shadow-lg flex flex-col justify-between"
             >
               <h4 className="text-xl font-bold">{info.title}</h4>
               <p className="text-sm mt-4">{info.description}</p>
