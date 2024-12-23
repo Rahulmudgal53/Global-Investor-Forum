@@ -10,9 +10,9 @@ function App() {
   return(
     <>
       {/* <Attendees/> */}
-      <Pass/>
+      {/* <Pass/> */}
       {/* <Pass2/> */}
-      {/* <Information/> */}
+      <Information/>
       {/* <Award/> */}
       {/* <Ticket/> */}
     </>
