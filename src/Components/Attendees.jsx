@@ -97,7 +97,7 @@ function Attendees() {
             Who’s joining us from your country? Check out the speakers and
             attendees coming to Web Summit from some 160 countries.
           </p>
-          <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-orange-600 self-center">Book Ticket</button>
+          <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-yellow-600 duration-300 self-center">Book Ticket</button>
         </div >
         <img 
           src="https://websummit.com/wp-media/2024/01/Attendees-take-a-selfie-during-the-opening-night-of-Web-Summit-2023-at-the-Altice-Arena-in-Lisbon-Portugal-1024x683.jpg"

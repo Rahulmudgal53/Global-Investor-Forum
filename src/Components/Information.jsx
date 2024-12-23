@@ -15,11 +15,20 @@ const Information = () => {
     introduction: {
       content:
         "Artificial intelligence (AI) has rapidly emerged as a driving force behind innovation and progress across various industries. Its transformative potential is reshaping the way we live, work, and interact with the world. From healthcare and finance to manufacturing and transportation, AI is revolutionizing how businesses operate and delivering unprecedented value. Recognizing the profound impact of AI, we are proud to introduce The AI Integration Excellence Award at the Global AI Summit, the world's largest AI event.",
-      focus_areas: [
-        "Successful AI Integration: Successfully incorporated AI into their daily operations, products, or services.",
-        "Created AI-Driven Solutions: Developed groundbreaking AI-powered tools that solve real-world problems.",
-        "AI Adoption Promotion: Actively promoted the use of AI through their work, initiatives, or advocacy.",
-      ],
+        focus_areas: [
+          {
+            title: "Successful AI Integration",
+            description: "Successfully incorporated AI into their daily operations, products, or services."
+          },
+          {
+            title: "Created AI-Driven Solutions",
+            description: "Developed groundbreaking AI-powered tools that solve real-world problems."
+          },
+          {
+            title: "AI Adoption Promotion",
+            description: "Actively promoted the use of AI through their work, initiatives, or advocacy."
+          }
+        ],
     },
     eligibility: {
       awardName: "The AI Integration Excellence Award",
@@ -281,11 +290,14 @@ const Information = () => {
               className="w-1/3 object-contain"
               alt="AI-INTEGRATION EXCELLENCE AWARD"
             />
-            <button className=" m-4 bg-yellow-300 p-2">Apply Now</button>
+            <button className=" m-4 bg-yellow-500 py-2 px-4 rounded-md text-white">Apply Now</button>
           </div>
 
           {/* Introduction */}
           <div className="w-full lg:w-3/5 p-12 flex-col">
+          <h2 className="text-3xl lg:text-5xl font-Antonio uppercase font-semibold text-yellow-500 mb-4">
+          Introduction
+        </h2>
             <p className="pt-4 text-lg font-Archivo text-white mb-6 ">
               {introduction.content}
             </p>
@@ -294,9 +306,9 @@ const Information = () => {
               organizations that have demonstrated exceptional achievements in
               the following areas:
             </p>
-            <ul className="text-lg font-Archivo text-white space-y-2 list-disc pl-5">
+            <ul className="text-lg font-Archivo text-white space-y-2 list-disc pl-5 pb-6">
               {introduction.focus_areas.map((goal, index) => (
-                <li key={index}>{goal}</li>
+                <li key={index}><span className="font-bold">{goal.title} : </span>{goal.description}</li>
               ))}
             </ul>
           </div>
@@ -408,13 +420,15 @@ const Information = () => {
 
       {/* Nomination Process */}
       <section className="lg:h-screen flex flex-col bg-gray-100 lg:flex-row ">
-        <div className=" bg-[url('https://www.madisonlogic.com/wp-content/uploads/2022/07/Blog-Image48.png')] bg-cover bg-bottom flex flex-1 items-end pb-12">
-          <h2 className="text-5xl lg:text-7xl pl-6 items-center max-w-sm font-Antonio uppercase font-semibold text-yellow-500 lg:pl-20 pb-20">
-            The Nomination Process
+        <div className=" bg-[url('https://www.madisonlogic.com/wp-content/uploads/2022/07/Blog-Image48.png')] bg-cover bg-bottom flex flex-1 items-end ">
+          <div className="w-full h-full flex flex-row items-end bg-gradient-to-b from-black/0 to-black/100">
+          <h2 className="text-5xl lg:text-7xl font-Antonio uppercase font-semibold text-yellow-500 pt-40 p-6 lg:pl-20 lg:pb-20  ">
+           The Nomination Process
           </h2>
+          </div>
         </div>
         <div className="text-xl my-auto flex-1 py-8 px-6 lg:px-12">
-          <p className="px-8 pt-4">
+          <p className="lg:px-8 pt-4">
             All information submitted as part of the nomination process will be
             treated with the utmost{" "}
             <span className="font-bold">confidentiality.</span> Neither the
@@ -425,8 +439,8 @@ const Information = () => {
             data will be handled securely and used solely for the purpose of
             evaluating your nomination and selecting award winners.
           </p>
-          <ul className=" list-disc list-inside mt-4 ">
-            <li className="px-12">
+          <ul className="pl-4 list-disc mt-4 ">
+            <li className="lg:mx-12">
               Visit our official website or you can submit your nomination via
               email to{" "}
               <span className="text-yellow-500 font-semibold">
@@ -435,10 +449,10 @@ const Information = () => {
               </span>{" "}
               for initial screening.
             </li>
-            <li className="px-12">
+            <li className="lg:mx-12">
               Submit required documentation and supporting materials.
             </li>
-            <li className="px-12">
+            <li className=" lg:mx-12">
               Ensure submission is received by the deadline.
             </li>
           </ul>
@@ -448,7 +462,7 @@ const Information = () => {
       {/* Required Information */}
       <section className="flex flex-col gap-12 py-8 px-6 text-white lg:flex-row lg:px-20">
         <div className="flex flex-col gap-4 flex-1">
-          <h2 className="text-5xl lg:text-7xl font-Antonio uppercase text-yellow-500">
+          <h2 className="text-3xl lg:text-5xl font-Antonio uppercase text-yellow-500">
             ReQuired Information
           </h2>
           <p>{required_information.description}</p>
@@ -464,18 +478,18 @@ const Information = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4 flex-1 ">
-          <h2 className=" text-5xl lg:text-7xl font-Antonio uppercase text-yellow-500">
+          <h2 className=" text-3xl lg:text-5xl font-Antonio uppercase text-yellow-500">
             Supporting Documentation
           </h2>
           <p>{supporting_documentation.description}</p>
           <div>
             {supporting_documentation.examples.map((example, index) => (
-              <ul key={index} className="py-1">
-                <li>{example}</li>
+              <ul key={index} className="py-1 pl-4">
+                <li className="list-disc">{example}</li>
               </ul>
             ))}
           </div>
-          <button className="p-4 bg-yellow-500">Apply Now</button>
+          <button className="m-auto py-2 px-4 rounded-md bg-yellow-500">Apply Now</button>
         </div>
       </section>
 
@@ -486,7 +500,7 @@ const Information = () => {
             className="flex pb-0 px-6 flex-1 flex-col gap-2 lg:pl-0 "
             // style={{ backgroundImage: `url(${evaluation_process.imgSrc})` }}
           >
-            <h2 className="text-5xl pb-4 lg:text-7xl font-Antonio uppercase text-yellow-500">
+            <h2 className="text-3xl pb-4 lg:text-5xl font-Antonio uppercase text-yellow-500">
               Evaluation Process
             </h2>
             {evaluation_process.criteria.map((list, index) => (
@@ -501,7 +515,7 @@ const Information = () => {
         </div>
 
         <div className=" flex-1 ">
-          <h2 className="text-5xl px-6 pb-4 lg:text-7xl lg:pl-0 font-Antonio uppercase text-yellow-500">
+          <h2 className="text-3xl px-6 pb-4 lg:text-5xl lg:pl-0 font-Antonio uppercase text-yellow-500">
             Nomination Fees
           </h2>
           <div className="flex flex-col gap-4 md:flex-row">
@@ -513,12 +527,12 @@ const Information = () => {
 
       {/* Winning */}
       <section className="flex flex-col bg-gray-100  lg:flex-row ">
-        <div className="flex flex-col py-8 flex-1 gap-2">
+        <div className="flex flex-col py-8 flex-1 gap-4">
           <h2 className="text-5xl pl-6 lg:text-7xl lg:pl-20 font-Antonio uppercase text-yellow-500 ">
             Winning
           </h2>
 
-          <p className="pl-6 lg:pl-20">
+          <p className=" text-xl pl-6 lg:pl-20">
             Should your{" "}
             <span className="text-yellow-500 font-bold">
               nomination be selected as a winner,
@@ -529,7 +543,7 @@ const Information = () => {
             {winning.benefits.map((benefit, index) => (
               <ul key={index} className=" list-disc pl-4">
                 <li>
-                  <span className="font-bold">{benefit.title}</span>
+                  <span className="font-bold">{benefit.title} : </span>
                   {benefit.description}
                 </li>
               </ul>

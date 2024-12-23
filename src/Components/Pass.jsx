@@ -100,10 +100,10 @@ const TicketSection = () => {
           Main Conference Tickets
         </h2>
         <p className="text-center font-Antonio uppercase text-white text-lg lg:text-3xl mb-12">Your Pass To the Future of AI, Immerse Yourself in the AI Ecosystem.</p>
-        <marquee className=" py-2 font-Archivo text-center font-bold text-yellow-500 text-lg lg:text-xl mb-12">
+        {/* <marquee className=" py-2 font-Archivo text-center font-bold text-yellow-500 text-lg lg:text-xl mb-12">
           Early Bird prices will be valid till 15th November 2024. Local German
           taxes plus processing fees (3.18%) will be applicable on all tickets.
-        </marquee>
+        </marquee> */}
 
         {/* Timeline */}
         <div className="flex items-center space-x-2">
@@ -117,9 +117,9 @@ const TicketSection = () => {
       </div>
       <div className="flex justify-around mt-4">
         {updatedEvents.map((event, index) => (
-          <div key={index} className="text-center">
+          <div key={index} className="">
             <p
-              className={`text-xl font-semibold ${
+              className={`text-md font-semibold ${
                 event.isActive ? "text-yellow-500":"text-white"
               }`}
             >
@@ -127,11 +127,11 @@ const TicketSection = () => {
             </p>
             {
               index===0?
-              <p className={`text-xl ${
+              <p className={`text-md ${
                 event.isActive ? "text-yellow-500":"text-white"
               }`}>
                {/* {event.date} */}
-               Ends 15-02-2025
+               15-02-2025
             </p>
             :""
             }
@@ -166,11 +166,11 @@ const TicketSection = () => {
               <p className="text-3xl font-bold text-yellow-400">
                 {ticket.price}
               </p>
-              <p className="text-sm text-gray-400 line-through">
+              <p className="text-md text-gray-100 line-through">
                 {ticket.originalPrice}
               </p>
               <p className="text-sm mt-2">{ticket.discount}</p>
-              <button className="bg-yellow-500 border-b-4 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-orange-600 self-center">
+              <button className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-yellow-600 duration-300 self-center">
                 {ticket.buttonText}
               </button>
               <button
@@ -186,7 +186,7 @@ const TicketSection = () => {
 
                 <div className="bg-gradient-to-bl from-indigo-900 via-blue-700 to-purple-800 rounded-b-lg -mt-4">
                 {openIncludes === index && (
-                <div className="flex flex-col top-60 shadow-md z-10">
+                <div className="flex flex-col shadow-md z-10">
                   {/* <div className="flex flex-row-reverse justify-between">
                   <button
                     className=" py-2 px-4 text-black font-bold bg-yellow-500 text-right "
@@ -196,10 +196,10 @@ const TicketSection = () => {
                   </button>
                   <h4 className="flex-1 pt-2 text-lg font-bold ">Includes:</h4>
                   </div> */}
-                  <ul className=" px-6 text-left">
+                  <ul className=" p-6 pl-8 pt-2 text-left">
                     {ticket.includes.map((item, itemIndex) => (
                       <div key={itemIndex} className="">
-                        <li className=" border-t-2 border-dashed  text-sm mt-1 p-2">
+                        <li className="list-disc text-sm mt-1">
                         {item}
                       </li>
                       </div>

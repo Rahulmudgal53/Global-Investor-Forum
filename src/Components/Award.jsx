@@ -10,10 +10,22 @@ const Award = () => {
     summitDetails: {
       description: `In the rapidly evolving landscape of artificial intelligence, recognition and celebration are paramount. As AI continues to redefine industries and shape our world, it's imperative to acknowledge the pioneers, innovators, and visionaries who are driving this technological revolution.`,
       goals: [
-        "Inspire Innovation: Highlight groundbreaking AI solutions that are pushing the boundaries of what is possible.",
-        "Recognize Excellence: Celebrate the dedication and hard work of the individuals and teams behind these remarkable achievements.",
-        "Foster Collaboration: Create a platform for industry leaders to connect, share knowledge, and drive collective progress.",
-        "Promote Ethical AI: Recognize organizations committed to responsible and ethical AI development.",
+        {
+          title: "Inspire Innovation",
+          description: "Highlight groundbreaking AI solutions that are pushing the boundaries of what is possible."
+        },
+        {
+          title: "Recognize Excellence",
+          description: "Celebrate the dedication and hard work of the individuals and teams behind these remarkable achievements."
+        },
+        {
+          title: "Foster Collaboration",
+          description: "Create a platform for industry leaders to connect, share knowledge, and drive collective progress."
+        },
+        {
+          title: "Promote Ethical AI",
+          description: "Recognize organizations committed to responsible and ethical AI development."
+        }
       ],
     },
     reasonsToApply: [
@@ -88,13 +100,13 @@ const Award = () => {
     <>
       
       <section
-        className="h-screen flex justify-left items-top bg-cover bg-center p-8 sm:p-16 md:p-32"
+        className="h-screen flex justify-left items-top bg-cover bg-center p-8 sm:p-16 md:p-32 "
         style={{
           backgroundImage:
-            "url('https://media.licdn.com/dms/image/v2/C4D12AQHRdpT3XD12CQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649787353589?e=1738195200&v=beta&t=QZQxCP6MyIA_UiT9Dpv9z4GcvWlmQTaNoXQInZWMbNs')",
+            "url('https://media.licdn.com/dms/image/v2/C4D12AQHRdpT3XD12CQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649787353589?e=1738195200&v=beta&t=QZQxCP6MyIA_UiT9Dpv9z4GcvWlmQTaNoXQInZWMbNs') ",
         }}
       >
-        <h1 className="uppercase md:p-24 p-5 pt-24 md-pt-0 text-3xl md:text-6xl font-Antonio font-semibold text-yellow-400 tracking-wide leading-10  w-1/2  
+        <h1 className="uppercase md:p-24 p-5 pt-24 md-pt-0 text-5xl lg:text-7xl font-Antonio font-semibold text-yellow-500 tracking-wide w-1/2  
         ">
           {title}
         </h1>
@@ -108,7 +120,7 @@ const Award = () => {
         </p>
         <ul className="text-white text-lg font-Archivo space-y-2 list-disc pl-5">
           {summitDetails.goals.map((goal, index) => (
-            <li key={index}>{goal}</li>
+            <li key={index}><span className="font-bold">{goal.title} : </span>{goal.description}</li>
           ))}
         </ul>
       </section>
@@ -126,7 +138,7 @@ const Award = () => {
                 className="w-full h-40 sm:h-48 object-cover rounded-md"
                 alt={reason.title}
               />
-              <h3 className="text-lg md:text-xl font-bold mt-4 text-purple-600 font-Archivo">
+              <h3 className="text-lg leading-tight md:text-xl font-bold mt-4 font-Archivo text-transparent bg-gradient-to-r from-blue-700 via-yellow-600 to-red-400 bg-clip-text ">
                 {reason.title}
               </h3>
               <p className="text-gray-600 text-sm md:text-base">
