@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import ZeroCostNominationOpen from "../assets/ZeroCostNominationOpen.png";
 import PaidNominationOpen from "../assets/PaidNominationOpen.png";
 import NominationDeadline from "../assets/NominationDeadline.png";
@@ -9,6 +9,10 @@ import Elegibility from "../assets/Elegibility.png";
 import NominationFees from "../assets/NominationFees.png";
 import EvaluationProcess from "../assets/EvaluationProcess.png";
 import Showcase from "../assets/Showcase.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+
 const Information = () => {
   const InfoData = {
     title: "The AI Integration Excellence Award 2025",
@@ -259,6 +263,17 @@ const Information = () => {
     },
   };
 
+const introRef =useRef()
+  useGSAP(()=>{
+    gsap.from(introRef.current,{
+      y:300,
+       duration:1,
+      opacity:0,
+      delay:0.5
+
+    })
+  })
+
   const {
     title,
     introduction,
@@ -287,18 +302,18 @@ const Information = () => {
           >
             <img
               src={aiIntegration}
-              className="w-1/3 object-contain"
+              className="w-2/5 object-contain"
               alt="AI-INTEGRATION EXCELLENCE AWARD"
             />
-            <button className=" m-4 bg-yellow-500 py-2 px-4 rounded-md text-white">Apply Now</button>
+            <button className="bg-yellow-500 text-sm text-white py-2 px-4 rounded m-4 hover:bg-yellow-600 ">Apply Now</button>
           </div>
 
           {/* Introduction */}
-          <div className="w-full lg:w-3/5 p-12 flex-col">
+          <div ref={introRef} className="w-full lg:w-3/5 p-6 lg:p-20 flex-col py-12">
           <h2 className="text-3xl lg:text-5xl font-Antonio uppercase font-semibold text-yellow-500 mb-4">
           Introduction
         </h2>
-            <p className="pt-4 text-lg font-Archivo text-white mb-6 ">
+            <p className="pt-2 text-lg font-Archivo text-white mb-6 ">
               {introduction.content}
             </p>
             <p className="text-lg font-Archivo text-white mb-6 ">
@@ -440,7 +455,7 @@ const Information = () => {
             evaluating your nomination and selecting award winners.
           </p>
           <ul className="pl-4 list-disc mt-4 ">
-            <li className="lg:mx-12">
+            <li className="lg:mx-8">
               Visit our official website or you can submit your nomination via
               email to{" "}
               <span className="text-yellow-500 font-semibold">
@@ -449,10 +464,10 @@ const Information = () => {
               </span>{" "}
               for initial screening.
             </li>
-            <li className="lg:mx-12">
+            <li className="lg:mx-8">
               Submit required documentation and supporting materials.
             </li>
-            <li className=" lg:mx-12">
+            <li className=" lg:mx-8">
               Ensure submission is received by the deadline.
             </li>
           </ul>
@@ -567,7 +582,7 @@ const Information = () => {
   <div className="flex flex-col md:flex-row-reverse gap-8 justify-between">
     <img
       src="https://propulsionquebec.com/wp-content/uploads/2023/06/image-ambition-atouts-580x435.jpg"
-      className="w-full max-w-md rounded-lg shadow-lg lg:w-1/2 "
+      className="w-full max-w-md rounded-l-3xl shadow-lg lg:w-1/2 "
       alt="Winning Profile Tips"
     />
     <div className="flex flex-col gap-4 px-6 lg:pl-20 ">
@@ -590,7 +605,7 @@ const Information = () => {
   <div className="flex flex-col md:flex-row gap-8 justify-between">
     <img
       src={Showcases.imgSrc}
-      className="w-full max-w-md rounded-lg shadow-lg lg:w-1/2 object-cover"
+      className="w-full max-w-md rounded-r-3xl shadow-lg lg:w-1/2 object-cover"
       alt="Showcase Image"
     />
     <div className="flex flex-col gap-4 px-6 lg:px-20 lg:w-1/2">

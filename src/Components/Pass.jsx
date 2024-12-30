@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import { useState } from "react";
@@ -131,7 +132,7 @@ const TicketSection = () => {
                 event.isActive ? "text-yellow-500":"text-white"
               }`}>
                {/* {event.date} */}
-               15-02-2025
+               15-February
             </p>
             :""
             }
@@ -166,11 +167,11 @@ const TicketSection = () => {
               <p className="text-3xl font-bold text-yellow-400">
                 {ticket.price}
               </p>
-              <p className="text-md text-gray-100 line-through">
+              <p className="text-xl text-white font-semibold line-through">
                 {ticket.originalPrice}
               </p>
               <p className="text-sm mt-2">{ticket.discount}</p>
-              <button className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-yellow-600 duration-300 self-center">
+              <button className="bg-yellow-500 text-white py-2 px-4 rounded mt-4 hover:bg-yellow-600 duration-300 self-center">
                 {ticket.buttonText}
               </button>
               <button
@@ -225,7 +226,7 @@ const TicketSection = () => {
             >
               <h4 className="text-xl font-bold">{info.title}</h4>
               <p className="text-sm mt-4">{info.description}</p>
-              <button className="bg-yellow-500 text-white font-semibold py-2 px-4 rounded mt-4 hover:bg-orange-600 self-center">
+              <button className="bg-yellow-500 text-white  py-2 px-4 rounded mt-4 hover:bg-yellow-600 self-center">
                 {info.buttonText}
               </button>
             </div>
