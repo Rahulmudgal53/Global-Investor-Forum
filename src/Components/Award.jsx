@@ -103,26 +103,29 @@ const Award = () => {
       goals: [
         {
           title: "Inspire Innovation",
-          description: "Highlight groundbreaking AI solutions that are pushing the boundaries of what is possible."
+          description:
+            "Highlight groundbreaking AI solutions that are pushing the boundaries of what is possible.",
         },
         {
           title: "Recognize Excellence",
-          description: "Celebrate the dedication and hard work of the individuals and teams behind these remarkable achievements."
+          description:
+            "Celebrate the dedication and hard work of the individuals and teams behind these remarkable achievements.",
         },
         {
           title: "Foster Collaboration",
-          description: "Create a platform for industry leaders to connect, share knowledge, and drive collective progress."
+          description:
+            "Create a platform for industry leaders to connect, share knowledge, and drive collective progress.",
         },
         {
           title: "Promote Ethical AI",
-          description: "Recognize organizations committed to responsible and ethical AI development."
-        }
+          description:
+            "Recognize organizations committed to responsible and ethical AI development.",
+        },
       ],
     },
     reasonsToApply: [
       {
-        imgSrc:
-          "https://kuber.ventures/wp-content/uploads/2024/09/1.jpg",
+        imgSrc: "https://kuber.ventures/wp-content/uploads/2024/09/1.jpg",
         title: "Celebrate and Acknowledge Team Effort",
         description:
           "Show appreciation for the relentless efforts of your team, recognizing their hard work to innovate with AI.",
@@ -190,17 +193,12 @@ const Award = () => {
     "from-blue-800 via-green-500 to-teal-600",
     "from-yellow-400 via-orange-500 to-red-500",
     "from-indigo-500 via-purple-500 to-pink-500",
-    
   ];
 
   const { title, summitDetails, reasonsToApply, awards } = aiSummitData;
 
-
-  
-
   return (
     <div ref={containerRef}>
-
       <section
         className="h-screen flex justify-left items-top bg-cover bg-center p-8 sm:p-16 md:p-32 "
         style={{
@@ -208,39 +206,44 @@ const Award = () => {
             "url('https://media.licdn.com/dms/image/v2/C4D12AQHRdpT3XD12CQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649787353589?e=1738195200&v=beta&t=QZQxCP6MyIA_UiT9Dpv9z4GcvWlmQTaNoXQInZWMbNs')",
         }}
       >
-        <h1 className=" title uppercase md:p-24 p-5 pt-24 md-pt-0 text-5xl lg:text-7xl font-Antonio font-semibold text-yellow-500 tracking-wide w-1/2  
-        ">
+        <h1
+          className=" title uppercase md:p-24 p-5 pt-24 md-pt-0 text-5xl lg:text-7xl font-Antonio font-semibold text-yellow-500 tracking-wide w-1/2  
+        "
+        >
           {title}
         </h1>
-        
       </section>
 
-      <section className=" goal px-6 py-12 bg-gradient-to-r from-purple-500 to-pink-500 lg:px-32" >
-        
+      <section className=" goal px-6 py-12 bg-gradient-to-r from-purple-500 to-pink-500 lg:px-32">
         <p className="text-white text-lg font-Archivo mb-6 ">
           {summitDetails.description}
         </p>
         <ul className="text-white text-lg font-Archivo space-y-2 list-disc pl-5">
           {summitDetails.goals.map((goal, index) => (
-            <li key={index}><span className="font-bold">{goal.title} : </span>{goal.description}</li>
+            <li key={index}>
+              <span className="font-bold">{goal.title} : </span>
+              {goal.description}
+            </li>
           ))}
         </ul>
       </section>
 
-      
       <section className="p-6 sm:p-12 bg-gradient-to-r from-pink-500 to-purple-500">
         <h2 className="text-center text-2xl sm:text-4xl md:text-5xl uppercase font-Antonio font-bold text-yellow-400 mb-8">
           5 Reasons Why You Should Apply
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-20">
           {reasonsToApply.map((reason, index) => (
-              <div key={index} className="reason p-4 bg-black/50 backdrop:blur-md shadow-lg rounded-md">
+            <div
+              key={index}
+              className="reason p-4 bg-black/50 backdrop:blur-md shadow-lg rounded-md"
+            >
               <img
                 src={reason.imgSrc}
                 className="w-full h-40 sm:h-48 object-cover rounded-md"
                 alt={reason.title}
               />
-              
+
               <h3 className="text-lg leading-tight md:text-2xl font-bold mt-4 pb-2 font-Archivo text-transparent bg-gradient-to-r from-teal-400 via-yellow-400 to-red-400 bg-clip-text ">
                 {reason.title}
               </h3>
@@ -270,14 +273,21 @@ const Award = () => {
                 className="w-full sm:w-48 h-48 object-contain rounded-md mb-4 lg:mb-0 flex-1"
               /> */}
               <div className="flex justify-center flex-1 px-4  pt-24 pb-4">
-                <div className={`relative flex items-center w-60 h-56 rounded bg-gradient-to-r ${
-            gradients[index % gradients.length]}
- text-center `}>
-                  <p className="px-6 text-2xl text-white font-Archivo font-bold">{award.title}</p>
-                  <div className="brightness-120 absolute -top-24 -left-14 w-32"><img src={AwardLogo} alt="Award logo" /></div>
-              </div>
+                <div
+                  className={`relative flex items-center w-60 h-56 rounded bg-gradient-to-r ${
+                    gradients[index % gradients.length]
+                  }
+ text-center `}
+                >
+                  <p className="px-6 text-2xl text-white font-Archivo font-bold">
+                    {award.title}
+                  </p>
+                  <div className="brightness-120 absolute -top-24 -left-14 w-32">
+                    <img src={AwardLogo} alt="Award logo" />
+                  </div>
                 </div>
-                
+              </div>
+
               <div className="text-center lg:text-left lg:ml-6 flex-1">
                 <h3 className="text-xl md:text-3xl font-Archivo font-bold text-transparent bg-gradient-to-r from-blue-600 via-red-500 to-yellow-600 bg-clip-text mb-4">
                   {award.title}

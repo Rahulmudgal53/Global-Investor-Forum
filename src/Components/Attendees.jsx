@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -181,6 +182,12 @@ function Attendees() {
     return () => ctx.revert();
   }, []);
 
+
+  const navigate = useNavigate();
+  function goToAtendeeDetails(){
+    navigate('/attendeeDetails')
+  }
+
   return (
     <div
       ref={containerRef}
@@ -211,7 +218,7 @@ function Attendees() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 p-8 bg-gray-100">
         {attendees.map((person, index) => (
           <div
-            key={index}
+            key={index} onClick={goToAtendeeDetails}
             className="attendee-card p-[4px] hue-rotate-30 hover:gradient-border group relative overflow-hidden rounded-xl"
           >
             {/* Gradient Border Container */}

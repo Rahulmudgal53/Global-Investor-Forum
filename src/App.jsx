@@ -6,17 +6,24 @@ import Pass from "./Components/Pass";
 import Pass2 from './Components/Pass2';
 import Attendees from './Components/Attendees';
 import AttendeeDetails from './Components/AttendeeDetails';
+import {Route, Routes } from 'react-router-dom';
 function App() {
 
   return(
+    // <>
+    //   <Award/>
+    //   <Attendees/>
+    //   <AttendeeDetails/>
+    //   <Pass/>
+    //   {/* <Pass2/> */}
+    //   <Information/>
+    //   {/* <Ticket/> */}
+    // </>
     <>
-      <Award/>
-      <Attendees/>
-      <AttendeeDetails/>
-      <Pass/>
-      {/* <Pass2/> */}
-      <Information/>
-      {/* <Ticket/> */}
+      <Routes>
+      <Route path='/' element={<Attendees/>}/>
+      <Route path='/AttendeeDetails' element={<AttendeeDetails/>}/>
+    </Routes>
     </>
   )
 }

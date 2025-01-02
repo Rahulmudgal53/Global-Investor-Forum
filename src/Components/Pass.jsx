@@ -485,7 +485,7 @@ const TicketSection = () => {
         <h2 className="text-4xl lg:text-7xl font-Antonio uppercase font-bold text-center mb-6">
           Main Conference Tickets
         </h2>
-        <p className="text-center font-Antonio uppercase text-white text-lg lg:text-3xl mb-12">Your Pass To the Future of AI, Immerse Yourself in the AI Ecosystem.</p>
+        <p className="text-center font-Antonio uppercase text-lg lg:text-3xl mb-12 text-transparent bg-gradient-to-r from-teal-400 via-yellow-400 to-red-400 bg-clip-text">Your Pass To the Future of AI, Immerse Yourself in the AI Ecosystem.</p>
         {/* <marquee className=" py-2 font-Archivo text-center font-bold text-yellow-500 text-lg lg:text-xl mb-12">
           Early Bird prices will be valid till 15th November 2024. Local German
           taxes plus processing fees (3.18%) will be applicable on all tickets.

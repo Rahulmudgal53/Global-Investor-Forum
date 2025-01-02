@@ -4,7 +4,7 @@ import PaidNominationOpen from "../assets/PaidNominationOpen.png";
 import NominationDeadline from "../assets/NominationDeadline.png";
 import ShortlistAnnounced from "../assets/ShortlistAnnounced.png";
 import WinnersAnnouncement from "../assets/WinnersAnnouncement.png";
-import aiIntegration from "../assets/AI-INTEGRATION EXCELLENCE AWARD.png";
+import AwardLogo from "../assets/Award.png";
 import Elegibility from "../assets/Elegibility.png";
 import NominationFees from "../assets/NominationFees.png";
 import EvaluationProcess from "../assets/EvaluationProcess.png";
@@ -293,20 +293,30 @@ const introRef =useRef()
       {/* Header */}
       <section className="flex flex-col ">
         <div className="flex flex-col lg:flex-row">
-          <div
-            className="flex flex-col gap-3 items-start justify-end flex-1 bg-cover bg-center p-8 sm:p-16 lg:p-12"
-            style={{
-              backgroundImage:
-                "url('https://img.freepik.com/premium-photo/computer-chip-processor-motherboard-glows-blue-artificial-intelligence-graphics-chip-mining-digital-technologies-network-security-3d-render_91497-10687.jpg')",
-            }}
-          >
-            <img
-              src={aiIntegration}
-              className="w-2/5 object-contain"
-              alt="AI-INTEGRATION EXCELLENCE AWARD"
-            />
-            <button className="bg-yellow-500 text-sm text-white py-2 px-4 rounded m-4 hover:bg-yellow-600 ">Apply Now</button>
-          </div>
+        <div
+  className="flex flex-col gap-3 p-12 items-start justify-end flex-1 bg-cover bg-center sm:p-16 lg:p-12"
+  style={{
+    backgroundImage:
+      "url('https://img.freepik.com/premium-photo/computer-chip-processor-motherboard-glows-blue-artificial-intelligence-graphics-chip-mining-digital-technologies-network-security-3d-render_91497-10687.jpg')",
+  }}
+>
+  <div className="flex pt-24 pb-4 px-4">
+    <div
+      className=" relative flex items-center w-60 h-56 rounded bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-center transform  lg:scale-100"
+    >
+      <p className="px-6 text-2xl text-white font-Archivo font-bold">
+        The AI Integration Excellence Award
+      </p>
+      <div className="brightness-120 absolute -top-24 -left-14 w-32">
+        <img src={AwardLogo} alt="Award logo" />
+      </div>
+    </div>
+  </div>
+  <button className="bg-yellow-500 text-sm text-white py-2 px-4 rounded ml-4 hover:bg-yellow-600">
+    Apply Now
+  </button>
+</div>
+
 
           {/* Introduction */}
           <div ref={introRef} className="w-full lg:w-3/5 p-6 lg:p-20 flex-col py-12">
