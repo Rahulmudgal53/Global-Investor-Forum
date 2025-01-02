@@ -11,7 +11,7 @@ function App() {
 
   return(
     // <>
-    //   <Award/>
+      // <Award/>
     //   <Attendees/>
     //   <AttendeeDetails/>
     //   <Pass/>
@@ -20,10 +20,14 @@ function App() {
     //   {/* <Ticket/> */}
     // </>
     <>
+      {/* <Award/>
+      <Pass/>
+      <Information/> */}
+
       <Routes>
-      <Route path='/' element={<Attendees/>}/>
-      <Route path='/AttendeeDetails' element={<AttendeeDetails/>}/>
-    </Routes>
+        <Route path="/" element={<Attendees />} />
+        <Route path="/attendee/:id" element={<AttendeeDetails />} />
+      </Routes>
     </>
   )
 }

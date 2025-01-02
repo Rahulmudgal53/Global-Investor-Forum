@@ -1,10 +1,24 @@
 import React,{useEffect} from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import { AttendeesData } from './AttendeeData';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AttendeeDetails = () => {
+
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const attendee = AttendeesData[id];
+  // const nextId = (Number(id) % AttendeesData.length) + 1
+  // const prevId = (Number(id) - 2 + AttendeesData.length) % AttendeesData.length + 1;
+
+  if (!attendee) {
+    return <p>Attendee not found</p>;
+
+  }
 
   useEffect(() => {
     // GSAP Animations
@@ -40,6 +54,9 @@ const AttendeeDetails = () => {
   }, []);
 
 
+  
+
+
   return (
     <div className='h-screen flex flex-col lg:flex-row gap-56 lg:gap-40 items-center bg-white'>
       <div className='h-1/3 lg:h-full relative w-full lg:w-1/3 flex justify-center'>
@@ -62,22 +79,44 @@ const AttendeeDetails = () => {
         <div className='h-80 w-64 lg:h-96 absolute top-28 lg:-right-32 m-4 lg:w-80 bg-gray-400 shadow-2xl rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 attendee-image'>
           <img
             className='w-full h-full object-cover'
-            src="https://via.placeholder.com/400x400"
-            alt="AttendeeImage"
+            src={attendee.personImage}
+            alt={attendee.name}
           />
         </div>
       </div>
-      <div className='flex-1 lg:self-start lg:mt-40'>
-        <h1 className='attendee-name text-5xl lg:text-7xl mb-12 text-gray-800 font-bold transition-transform duration-1000 ease-in-out transform md:hover:translate-x-4'>
-          Name Surname
+      <div className='relative flex-1 lg:self-start lg:pt-40 h-full'>
+        <h1 className='attendee-name text-5xl lg:text-7xl mb-8 text-gray-800 font-bold transition-transform duration-1000 ease-in-out transform md:hover:translate-x-4'>
+          {/* Name Surname */}  {attendee.name}
         </h1>
         <p className='attendee-company text-2xl mb-4 text-gray-600 font-medium'>
-          Company Name
+          {/* Company Name */}  {attendee.company}
         </p>
         <p className='attendee-position text-xl text-gray-500'>
-          Position At Company
+          {/* Position At Company  */}  {attendee.position}
         </p>
+        <div 
+        // className='absolute '
+        className='absolute bottom-1 left-1/3 lg:bottom-1/3 flex flex-row gap-4 justify-center'
+        >
+      <div className=''>
+        {id>0 && <button
+        onClick={() => navigate(`/attendee/${Number(id)-1}`)}
+        className="mb-4 bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+      >
+        {'<<'}
+      </button>}
       </div>
+      <div>
+        {id<AttendeesData.length-1 &&<button
+        onClick={() => navigate(`/attendee/${Number(id)+1}`)}
+        className="mb-4 bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+      >
+        {'>>'}
+      </button>}
+      </div>
+      </div>
+      </div>
+      
     </div>
   );
 };
