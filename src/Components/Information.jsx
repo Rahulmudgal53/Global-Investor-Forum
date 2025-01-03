@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, { useRef, useEffect } from "react";
 import ZeroCostNominationOpen from "../assets/ZeroCostNominationOpen.png";
 import PaidNominationOpen from "../assets/PaidNominationOpen.png";
 import NominationDeadline from "../assets/NominationDeadline.png";
@@ -9,30 +9,126 @@ import Elegibility from "../assets/Elegibility.png";
 import NominationFees from "../assets/NominationFees.png";
 import EvaluationProcess from "../assets/EvaluationProcess.png";
 import Showcase from "../assets/Showcase.png";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Information = () => {
+
+  const containerRef = useRef(null);
+  
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+
+      gsap.fromTo(
+        '.fall-In',
+        { opacity: 0, y: -100 }, 
+        { opacity: 1, y: 0, duration: 0.7, stagger:0.2,  ease: 'power2.out', scrollTrigger: {
+          trigger: ".fall-In",
+          start: "top 80%",
+          markers:true,
+        }, }
+      );
+
+      gsap.fromTo(
+        '.climb-In',
+        { opacity: 0, y: 100 }, 
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: {
+          trigger: ".climb-In",
+          start: "top 80%",
+          markers:true,
+
+        }, }
+      );
+
+      gsap.fromTo(
+        '.slide-to-right',
+        { opacity: 0, x: -100 }, 
+        { opacity: 1, x: 0, duration: 1,stagger:0.2, ease: 'power2.out', scrollTrigger: {
+          trigger: ".slide-to-right",
+          start: "top 80%",
+          markers:true,
+
+        }, }
+      );
+
+      gsap.fromTo(
+        '.slide-to-left',
+        { opacity: 0, x: 100 }, 
+        { opacity: 1, x: 0, duration: 1, ease: 'power2.out', scrollTrigger: {
+          trigger: ".slide-to-left",
+          start: "top 80%",
+          markers:true,
+
+        }, }
+      );
+      
+
+      // gsap.utils.toArray(".ticket-card").forEach((card, index) => {
+      //         gsap.fromTo(
+      //           card,
+      //           { opacity: 0, scale: 0.8 },
+      //           {
+      //             opacity: 1,
+      //             scale: 1,
+      //             duration: 1,
+      //             stagger: 0.2,
+      //             ease: "power3.out",
+      //             scrollTrigger: {
+      //               trigger: card,
+      //               start: "top 90%",
+      //               toggleActions: "play none none none",
+      //             },
+      //           }
+      //         );
+      //       });
+
+            // gsap.utils.toArray(".additional-info-card").forEach((card, index) => {
+            //   gsap.fromTo(
+            //     card,
+            //     { opacity: 0, scale: 0.8 },
+            //     {
+            //       opacity: 1,
+            //       scale: 1,
+            //       duration: 1,
+            //       stagger:0.2,
+            //       ease: "power3.out",
+            //       scrollTrigger: {
+            //         trigger: card,
+            //         start: "top 90%",
+            //         toggleActions: "play none none none",
+            //       },
+            //     }
+            //   );
+            // });
+    }, containerRef);
+
+    return () => ctx.revert(); // Clean up GSAP context on component unmount
+  }, []);
+
   const InfoData = {
     title: "The AI Integration Excellence Award 2025",
     introduction: {
       content:
         "Artificial intelligence (AI) has rapidly emerged as a driving force behind innovation and progress across various industries. Its transformative potential is reshaping the way we live, work, and interact with the world. From healthcare and finance to manufacturing and transportation, AI is revolutionizing how businesses operate and delivering unprecedented value. Recognizing the profound impact of AI, we are proud to introduce The AI Integration Excellence Award at the Global AI Summit, the world's largest AI event.",
-        focus_areas: [
-          {
-            title: "Successful AI Integration",
-            description: "Successfully incorporated AI into their daily operations, products, or services."
-          },
-          {
-            title: "Created AI-Driven Solutions",
-            description: "Developed groundbreaking AI-powered tools that solve real-world problems."
-          },
-          {
-            title: "AI Adoption Promotion",
-            description: "Actively promoted the use of AI through their work, initiatives, or advocacy."
-          }
-        ],
+      focus_areas: [
+        {
+          title: "Successful AI Integration",
+          description:
+            "Successfully incorporated AI into their daily operations, products, or services.",
+        },
+        {
+          title: "Created AI-Driven Solutions",
+          description:
+            "Developed groundbreaking AI-powered tools that solve real-world problems.",
+        },
+        {
+          title: "AI Adoption Promotion",
+          description:
+            "Actively promoted the use of AI through their work, initiatives, or advocacy.",
+        },
+      ],
     },
     eligibility: {
       awardName: "The AI Integration Excellence Award",
@@ -263,17 +359,6 @@ const Information = () => {
     },
   };
 
-const introRef =useRef()
-  useGSAP(()=>{
-    gsap.from(introRef.current,{
-      y:300,
-       duration:1,
-      opacity:0,
-      delay:0.5
-
-    })
-  })
-
   const {
     title,
     introduction,
@@ -289,56 +374,57 @@ const introRef =useRef()
     Showcases,
   } = InfoData;
   return (
-    <div className=" text-lg font-Archivo bg-gradient-to-r from-pink-700 to-purple-700">
+    <div ref={containerRef} className=" text-lg font-Archivo bg-gradient-to-r from-pink-700 to-purple-700">
       {/* Header */}
-      <section className="flex flex-col ">
+      <section
+ className=" flex flex-col ">
         <div className="flex flex-col lg:flex-row">
-        <div
-  className="flex flex-col gap-3 p-12 items-start justify-end flex-1 bg-cover bg-center sm:p-16 lg:p-12"
-  style={{
-    backgroundImage:
-      "url('https://img.freepik.com/premium-photo/computer-chip-processor-motherboard-glows-blue-artificial-intelligence-graphics-chip-mining-digital-technologies-network-security-3d-render_91497-10687.jpg')",
-  }}
->
-  <div className="flex pt-24 pb-4 px-4">
-    <div
-      className=" relative flex items-center w-60 h-56 rounded bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-center transform  lg:scale-100"
-    >
-      <p className="px-6 text-2xl text-white font-Archivo font-bold">
-        The AI Integration Excellence Award
-      </p>
-      <div className="brightness-120 absolute -top-24 -left-14 w-32">
-        <img src={AwardLogo} alt="Award logo" />
-      </div>
-    </div>
-  </div>
-  <button className="bg-yellow-500 text-sm text-white py-2 px-4 rounded ml-4 hover:bg-yellow-600">
-    Apply Now
-  </button>
-</div>
-
+          <div
+            className=" fall-In flex flex-col gap-3 p-12 items-start justify-end flex-1 bg-cover bg-center sm:p-16 lg:p-12"
+            style={{
+              backgroundImage:
+                "url('https://img.freepik.com/premium-photo/computer-chip-processor-motherboard-glows-blue-artificial-intelligence-graphics-chip-mining-digital-technologies-network-security-3d-render_91497-10687.jpg')",
+            }}
+          >
+            <div className="slide-to-right flex pt-24 pb-4 px-4">
+              <div className=" relative flex items-center w-60 h-56 rounded bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-center transform  lg:scale-100">
+                <p className="px-6 text-2xl text-white font-Archivo font-bold">
+                  The AI Integration Excellence Award
+                </p>
+                <div className="brightness-120 absolute -top-24 -left-14 w-32">
+                  <img src={AwardLogo} alt="Award logo" />
+                </div>
+              </div>
+            </div>
+            <button className="bg-yellow-500 text-sm text-white py-2 px-4 rounded ml-4 hover:bg-yellow-600">
+              Apply Now
+            </button>
+          </div>
 
           {/* Introduction */}
-          <div ref={introRef} className="w-full lg:w-3/5 p-6 lg:p-20 flex-col py-12">
-          <h2 className="text-3xl lg:text-5xl font-Antonio uppercase font-semibold text-yellow-500 mb-4">
-          Introduction
-        </h2>
-            <p className="pt-2 text-lg font-Archivo text-white mb-6 ">
+          <div  className=" w-full lg:w-3/5 p-6 lg:p-20 flex-col py-12">
+            <h2 className="fall-In text-3xl lg:text-5xl font-Antonio uppercase font-semibold text-yellow-500 mb-4">
+              Introduction
+            </h2>
+            <p className="fall-In pt-2 text-lg font-Archivo text-white mb-6 ">
               {introduction.content}
             </p>
-            <p className="text-lg font-Archivo text-white mb-6 ">
+            <p className="fall-In text-lg font-Archivo text-white mb-6 ">
               The AI Integration Excellence Award will be bestowed upon
               organizations that have demonstrated exceptional achievements in
               the following areas:
             </p>
             <ul className="text-lg font-Archivo text-white space-y-2 list-disc pl-5 pb-6">
               {introduction.focus_areas.map((goal, index) => (
-                <li key={index}><span className="font-bold">{goal.title} : </span>{goal.description}</li>
+                <li key={index} className="slide-to-right">
+                  <span className=" font-bold">{goal.title} : </span>
+                  {goal.description}
+                </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className="bg-yellow-400 flex flex-col items-center">
+        <div  className="bg-yellow-400 flex flex-col items-center">
           <h2 className="text-5xl lg:text-7xl -my-8 p-6 rounded-xl bg-yellow-400 font-Antonio uppercase pb-6 font-semibold text-blue-700 text-center">
             Timelines
           </h2>
@@ -394,7 +480,7 @@ const introRef =useRef()
       </section>
 
       {/* Categories */}
-      <section className="py-8 mx-6 lg:mx-20">
+      <section  className="py-8 mx-6 lg:mx-20">
         <h2 className="text-5xl underline-animated lg:text-7xl font-Antonio uppercase font-semibold text-yellow-500 mb-6">
           Categories
         </h2>
@@ -444,12 +530,12 @@ const introRef =useRef()
       </section>
 
       {/* Nomination Process */}
-      <section className="lg:h-screen flex flex-col bg-gray-100 lg:flex-row ">
+      <section  className="lg:h-screen flex flex-col bg-gray-100 lg:flex-row ">
         <div className=" bg-[url('https://www.madisonlogic.com/wp-content/uploads/2022/07/Blog-Image48.png')] bg-cover bg-bottom flex flex-1 items-end ">
           <div className="w-full h-full flex flex-row items-end bg-gradient-to-b from-black/0 to-black/100">
-          <h2 className="text-5xl lg:text-7xl font-Antonio uppercase font-semibold text-yellow-500 pt-40 p-6 lg:pl-20 lg:pb-20  ">
-           The Nomination Process
-          </h2>
+            <h2 className="text-5xl lg:text-7xl font-Antonio uppercase font-semibold text-yellow-500 pt-40 p-6 lg:pl-20 lg:pb-20  ">
+              The Nomination Process
+            </h2>
           </div>
         </div>
         <div className="text-xl my-auto flex-1 py-8 px-6 lg:px-12">
@@ -514,7 +600,9 @@ const introRef =useRef()
               </ul>
             ))}
           </div>
-          <button className="m-auto py-2 px-4 rounded-md bg-yellow-500">Apply Now</button>
+          <button className="m-auto py-2 px-4 rounded-md bg-yellow-500">
+            Apply Now
+          </button>
         </div>
       </section>
 
@@ -535,7 +623,11 @@ const introRef =useRef()
             ))}
           </div>
           <div className="flex flex-col justify-center">
-            <img className="h-full object-cover" src={evaluation_process.imgSrc} alt="" />           
+            <img
+              className="h-full object-cover"
+              src={evaluation_process.imgSrc}
+              alt=""
+            />
           </div>
         </div>
 
@@ -584,58 +676,58 @@ const introRef =useRef()
 
       {/* Tips and Showcases */}
       <section className="flex flex-col gap-8 text-white py-12 ">
-  <h2 className="text-5xl px-6 lg:text-7xl lg:px-20 font-Antonio uppercase text-yellow-500">
-    Tips to Submit a Winning Profile
-  </h2>
-  
-  {/* First Section */}
-  <div className="flex flex-col md:flex-row-reverse gap-8 justify-between">
-    <img
-      src="https://propulsionquebec.com/wp-content/uploads/2023/06/image-ambition-atouts-580x435.jpg"
-      className="w-full max-w-md rounded-l-3xl shadow-lg lg:w-1/2 "
-      alt="Winning Profile Tips"
-    />
-    <div className="flex flex-col gap-4 px-6 lg:pl-20 ">
-      <h3 className="font-Antonio text-3xl lg:text-4xl uppercase text-yellow-500">
-        Tell a Compelling Story:
-      </h3>
-      <div>
-        {tips.map((tip, index) => (
-          <ul className="text-lg lg:text-xl" key={index}>
-            <li className="mb-2">
-              <span className="font-bold">{tip.title}</span> {tip.description}
-            </li>
-          </ul>
-        ))}
-      </div>
-    </div>
-  </div>
-  
-  {/* Second Section */}
-  <div className="flex flex-col md:flex-row gap-8 justify-between">
-    <img
-      src={Showcases.imgSrc}
-      className="w-full max-w-md rounded-r-3xl shadow-lg lg:w-1/2 object-cover"
-      alt="Showcase Image"
-    />
-    <div className="flex flex-col gap-4 px-6 lg:px-20 lg:w-1/2">
-      <h3 className="font-Antonio text-3xl lg:text-4xl uppercase text-yellow-500">
-        Showcase Your Work:
-      </h3>
-      <div>
-        {Showcases.showcase.map((cases, index) => (
-          <ul className="text-lg lg:text-xl" key={index}>
-            <li className="mb-2">
-              <span className="font-bold">{cases.title}</span> {cases.description}
-            </li>
-          </ul>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        <h2 className="text-5xl px-6 lg:text-7xl lg:px-20 font-Antonio uppercase text-yellow-500">
+          Tips to Submit a Winning Profile
+        </h2>
 
-      
+        {/* First Section */}
+        <div className="flex flex-col md:flex-row-reverse gap-8 justify-between">
+          <img
+            src="https://propulsionquebec.com/wp-content/uploads/2023/06/image-ambition-atouts-580x435.jpg"
+            className="w-full max-w-md rounded-l-3xl shadow-lg lg:w-1/2 "
+            alt="Winning Profile Tips"
+          />
+          <div className="flex flex-col gap-4 px-6 lg:pl-20 ">
+            <h3 className="font-Antonio text-3xl lg:text-4xl uppercase text-yellow-500">
+              Tell a Compelling Story:
+            </h3>
+            <div>
+              {tips.map((tip, index) => (
+                <ul className="text-lg lg:text-xl" key={index}>
+                  <li className="mb-2">
+                    <span className="font-bold">{tip.title}</span>{" "}
+                    {tip.description}
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Second Section */}
+        <div className="flex flex-col md:flex-row gap-8 justify-between">
+          <img
+            src={Showcases.imgSrc}
+            className="w-full max-w-md rounded-r-3xl shadow-lg lg:w-1/2 object-cover"
+            alt="Showcase Image"
+          />
+          <div className="flex flex-col gap-4 px-6 lg:px-20 lg:w-1/2">
+            <h3 className="font-Antonio text-3xl lg:text-4xl uppercase text-yellow-500">
+              Showcase Your Work:
+            </h3>
+            <div>
+              {Showcases.showcase.map((cases, index) => (
+                <ul className="text-lg lg:text-xl" key={index}>
+                  <li className="mb-2">
+                    <span className="font-bold">{cases.title}</span>{" "}
+                    {cases.description}
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

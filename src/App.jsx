@@ -20,9 +20,9 @@ function App() {
     //   {/* <Ticket/> */}
     // </>
     <>
-      {/* <Award/>
+      <Award/>
       <Pass/>
-      <Information/> */}
+      <Information/>
 
       <Routes>
         <Route path="/" element={<Attendees />} />

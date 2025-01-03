@@ -107,17 +107,17 @@ function Attendees() {
       </div>
 
       {/* Attendees Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 p-20 bg-gray-100">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 p-8 bg-gray-100">
         {attendees.map((person, index) => (
           <div
             key={index} onClick={() => handleCardClick(index)}
-            className="attendee-card p-[4px] hue-rotate-30 hover:gradient-border group relative overflow-hidden rounded-xl"
+            className="attendee-card p-1 hue-rotate-30 hover:gradient-border hover:cursor-pointer group relative overflow-hidden rounded-xl"
           >
             {/* Gradient Border Container */}
             <div className="h-full bg-white bg-transparent shadow rounded-xl relative z-10">
               <div className="overflow-hidden rounded-t-lg">
                 <img
-                  className="w-full group-hover:scale-125 duration-500 h-60 object-cover"
+                  className="w-full  group-hover:scale-125 duration-500 h-60 object-cover"
                   src={person.personImage}
                   alt={person.name}
                 />

@@ -88,11 +88,11 @@ const AttendeeDetails = () => {
         <h1 className='attendee-name text-5xl lg:text-7xl mb-8 text-gray-800 font-bold transition-transform duration-1000 ease-in-out transform md:hover:translate-x-4'>
           {/* Name Surname */}  {attendee.name}
         </h1>
-        <p className='attendee-company text-2xl mb-4 text-gray-600 font-medium'>
-          {/* Company Name */}  {attendee.company}
-        </p>
-        <p className='attendee-position text-xl text-gray-500'>
+        <p className='attendee-position text-2xl text-gray-500'>
           {/* Position At Company  */}  {attendee.position}
+        </p>
+        <p className='attendee-company text-3xl mb-4 text-gray-600 font-medium'>
+          {/* Company Name */}  {attendee.company}
         </p>
         <div 
         // className='absolute '
