@@ -10,6 +10,8 @@ export default {
       'Archivo': ["Archivo"],
       'Antonio': ["Antonio"],
       'Roboto': ["Roboto"],
+      'League+Spartan' : ["League+partan"]
+
       // 'Archivo': ["Archivo"],
       },
       backgroundImage: {

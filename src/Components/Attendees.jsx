@@ -110,7 +110,8 @@ function Attendees() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6 py-8 px-4 bg-gray-100">
         {attendees.map((person, index) => (
           <div
-            key={index} onClick={() => handleCardClick(index)}
+            key={index} 
+            // onClick={() => handleCardClick(index)}
             className="attendee-card p-1 hue-rotate-30 hover:gradient-border hover:cursor-pointer group relative overflow-hidden rounded-xl"
           >
             {/* Gradient Border Container */}
@@ -122,10 +123,15 @@ function Attendees() {
                   alt={person.name}
                 />
               </div>
-              <div className="p-4">
-                <h2 className="text-lg font-bold">{person.name}</h2>
+              <div className="flex px-2 pb-2">
+                <div className="flex flex-col justify-center w-1/3">
+                  <img className="items-center bg-white" src={person.companyImage} alt={person.company} />
+                </div>
+                <div className="pl-4 pt-2 flex-1">
+                <h2 className="text-lg font-bold leading-none">{person.name}</h2>
                 <p className="text-gray-500">{person.position}</p>
                 <p className="text-gray-700">{person.company}</p>
+              </div>
               </div>
             </div>
             <span

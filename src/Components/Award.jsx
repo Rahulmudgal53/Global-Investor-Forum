@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import innovativeStartup from "../assets/The Innovative AI-Powered Startup Award.png";
 // import bestAISolutions from "../assets/Best AI-Powered Solutions for Industry Award.png";
 // import aiEcosystem from "../assets/The AI Ecosystem Excellence Award.png";
+import ucard from '../assets/ucard.jpg'
 import AwardLogo from "../assets/Award.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -165,34 +166,40 @@ const Award = () => {
         title: "The AI Integration Excellence Award",
         description:
           "Acknowledges companies that have seamlessly embedded AI into their business processes, offering AI-driven solutions and encouraging others to adopt AI through their innovative AI-powered solutions.",
-        // imgSrc: aiIntegration,
+        imgSrc: "",
       },
       {
         title: "The Innovative AI-Powered Startup Award",
         description:
           "This award celebrates the promising startups that are pioneering new frontiers in AI, showcasing their potential to disrupt industries and shape the future.",
-        // imgSrc: innovativeStartup,
+        imgSrc: "",
       },
       {
         title: "Best AI-Powered Solutions for Industry Award",
         description:
           "This award honors the most outstanding AI-powered companies and their innovative solutions that are revolutionizing specific industries, boosting efficiency, productivity, and growth.",
-        // imgSrc: bestAISolutions,
+        imgSrc: "",
       },
       {
         title: "The AI Ecosystem Excellence Award",
         description:
           "This award recognizes organizations that are driving the growth and development of the AI ecosystem.",
-        // imgSrc: aiEcosystem,
+        imgSrc: "",
+      },
+      {
+        title: "The AI Ecosystem Excellence Award",
+        description:
+          "This award recognizes organizations that are driving the growth and development of the AI ecosystem.",
+        imgSrc: ucard,
       },
     ],
   };
 
   const gradients = [
     "from-purple-500 via-pink-500 to-red-500",
-    "from-blue-800 via-green-500 to-teal-600",
+    "from-red-500 via-orange-500 to-orange-400",
+    "from-pink-500 via-purple-500 to-indigo-500",
     "from-yellow-400 via-orange-500 to-red-500",
-    "from-indigo-500 via-purple-500 to-pink-500",
   ];
 
   const { title, summitDetails, reasonsToApply, awards } = aiSummitData;
@@ -207,8 +214,7 @@ const Award = () => {
         }}
       >
         <h1
-          className=" title uppercase md:p-24 p-5 pt-24 md-pt-0 text-5xl lg:text-7xl font-Antonio font-semibold text-yellow-500 tracking-wide w-1/2  
-        "
+          className=" title uppercase md:p-24 p-5 pt-24 md-pt-0 text-5xl lg:text-7xl font-Antonio font-semibold  tracking-wide w-1/2 text-yellow-400 "
         >
           {title}
         </h1>
@@ -239,7 +245,7 @@ const Award = () => {
               className="reason p-4 bg-black/50 backdrop:blur-md shadow-lg rounded-md"
             >
               <img
-                src={reason.imgSrc}
+                src={reason.imgSrc} 
                 className="w-full h-40 sm:h-48 object-cover rounded-md"
                 alt={reason.title}
               />
@@ -247,7 +253,7 @@ const Award = () => {
               <h3 className="text-lg leading-tight md:text-2xl font-bold mt-4 pb-2 font-Archivo text-transparent bg-gradient-to-r from-teal-400 via-yellow-400 to-red-400 bg-clip-text ">
                 {reason.title}
               </h3>
-              <p className="text-white leading-none font-Archivo md:text-xl">
+              <p className="text-white  font-Archivo leading-tight text-sm md:text-xl">
                 {reason.description}
               </p>
             </div>
@@ -267,26 +273,30 @@ const Award = () => {
                 index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
               } items-center bg-white p-6 sm:p-12 rounded-md shadow-md`}
             >
-              {/* <img
+              {award.imgSrc? <img
                 src={award.imgSrc}
                 alt={award.title}
                 className="w-full sm:w-48 h-48 object-contain rounded-md mb-4 lg:mb-0 flex-1"
-              /> */}
-              <div className="flex justify-center flex-1 px-4  pt-24 pb-4">
+              />
+            :
+            <div className="flex justify-center flex-1 px-4  pt-24 pb-4">
                 <div
-                  className={`relative flex items-center w-60 h-56 rounded bg-gradient-to-r ${
+                  className={`relative flex items-end pb-4 w-52 h-44 bg-gradient-to-r ${
                     gradients[index % gradients.length]
                   }
- text-center `}
+ text-left `}
                 >
-                  <p className="px-6 text-2xl text-white font-Archivo font-bold">
+                  <p className="px-4 pb-2 text-2xl leading-none font-League+Spartan uppercase  text-white font-bold">
                     {award.title}
                   </p>
-                  <div className="brightness-120 absolute -top-24 -left-14 w-32">
+                  <div className="brightness-120 absolute -top-20 -left-12 w-24">
                     <img src={AwardLogo} alt="Award logo" />
                   </div>
                 </div>
-              </div>
+              </div>}
+              
+
+              
 
               <div className="text-center lg:text-left lg:ml-6 flex-1">
                 <h3 className="text-xl md:text-3xl font-Archivo font-bold text-transparent bg-gradient-to-r from-blue-600 via-red-500 to-yellow-600 bg-clip-text mb-4">
@@ -305,7 +315,9 @@ const Award = () => {
                 </div>
               </div>
             </div>
+            
           ))}
+          
         </div>
       </section>
     </div>

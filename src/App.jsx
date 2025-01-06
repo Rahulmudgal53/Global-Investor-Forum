@@ -6,6 +6,7 @@ import Pass from "./Components/Pass";
 import Pass2 from './Components/Pass2';
 import Attendees from './Components/Attendees';
 import AttendeeDetails from './Components/AttendeeDetails';
+import Company from './Components/Company';
 import {Route, Routes } from 'react-router-dom';
 function App() {
 
@@ -20,14 +21,16 @@ function App() {
     //   {/* <Ticket/> */}
     // </>
     <>
-      {/* <Award/>
-      <Pass/> */}
-      {/* <Information/> */}
+      {/* <Company/> */}
+      <Award/>
+      {/* <Pass/> */}
+      {/* <Attendees/> */}
 
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Attendees />} />
         <Route path="/attendee/:id" element={<AttendeeDetails />} />
-      </Routes>
+      </Routes> */}
+      <Information/>
     </>
   )
 }

@@ -155,6 +155,29 @@ import RafaelBodego from '../assets/AttendeeImage/Rafael-Bodego.png';
 import Sagi from '../assets/AttendeeImage/Sagi.jpg';
 import SamuelHazak from '../assets/AttendeeImage/Samuel-Hazak.jpg';
 import StefanSchwarz from '../assets/AttendeeImage/Stefan-Schwarz.jpg';
+import Geeta from '../assets/AttendeeImage/Geeta-Sham.png';
+import NevioBuric from '../assets/AttendeeImage/NevioBuric.jpg';
+
+// Company Images
+
+import Axelera from '../assets/Company-logo/Axelera-Logo-Black.png';
+import BorgAi from '../assets/Company-logo/borg-ai.jpg';
+import CamCom from '../assets/Company-logo/CamCom-Logo.jpg';
+import Dashmote from '../assets/Company-logo/Dashmote-Wordmark.png';
+import Flytxt from '../assets/Company-logo/FlytxtRegisteredLogo.png';
+import BioSmart from '../assets/Company-logo/Logo-BioSmart-Data.png';
+import Hechiceria from '../assets/Company-logo/LOGOS-HechicerIA-06.png';
+import NightOwl from '../assets/Company-logo/NightOwlGPT-Logo.png';
+import Qaleon from '../assets/Company-logo/Qaleon-logo.png';
+import Space4Good from '../assets/Company-logo/Space4Good.png';
+import UIB from '../assets/Company-logo/UIB.webp';
+import Azilen from '../assets/Company-logo/Azilen-Technologies.png'
+import Daidream from '../assets/Company-logo/Daidream.png'
+import AdversaAI from '../assets/Company-logo/AdversaAI.png'
+import Chronom from '../assets/Company-logo/Chronom.png'
+import Procys from '../assets/Company-logo/Procys.png'
+import Equanimity from '../assets/Company-logo/Equanimity.avif'
+
 
 export const AttendeesData = [
   {
@@ -163,7 +186,7 @@ export const AttendeesData = [
     company: "Qaleon",
     location: "N/A",
     personImage: "https://via.placeholder.com/150",
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Qaleon,
   },
   {
     name: "Stefan Schwarz",
@@ -171,7 +194,7 @@ export const AttendeesData = [
     company: "Flytxt",
     location: "N/A",
     personImage: StefanSchwarz,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Flytxt,
   },
   {
     name: "Sagi Lahav",
@@ -179,7 +202,7 @@ export const AttendeesData = [
     company: "Chronom",
     location: "N/A",
     personImage: Sagi,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Chronom ,
   },
   {
     name: "Anna Mae Yu Lamentio",
@@ -187,7 +210,7 @@ export const AttendeesData = [
     company: "NightOwlGpt",
     location: "N/A",
     personImage: AnnaMaeYuLamentillo,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: NightOwl,
   },
   {
     name: "Dennis Tan",
@@ -195,7 +218,7 @@ export const AttendeesData = [
     company: "Dashmote",
     location: "N/A",
     personImage: DennisTan,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Dashmote,
   },
   {
     name: "Deepesh Trivedi",
@@ -203,7 +226,7 @@ export const AttendeesData = [
     company: "UIB",
     location: "N/A",
     personImage: DeepeshTrivedi,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: UIB,
   },
   {
     name: "Alexander Gunkel",
@@ -211,7 +234,7 @@ export const AttendeesData = [
     company: "Space4Good",
     location: "N/A",
     personImage: AlexanderGunkel,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Space4Good,
   },
   {
     name: "Maria Cayuela",
@@ -219,7 +242,7 @@ export const AttendeesData = [
     company: "BioSmartData",
     location: "N/A",
     personImage: MariaCayuela,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: BioSmart,
   },
   {
     name: "Álvaro Sáez Tonda",
@@ -227,7 +250,7 @@ export const AttendeesData = [
     company: "Hechicher IA",
     location: "N/A",
     personImage: AlvaroSaezTonda,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Hechiceria,
   },
   {
     name: "Alexis Crowell",
@@ -235,7 +258,7 @@ export const AttendeesData = [
     company: "Axelera AI",
     location: "N/A",
     personImage: AlexisCrowell,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Axelera,
   },
   {
     name: "Rafael Bodego",
@@ -243,7 +266,7 @@ export const AttendeesData = [
     company: "Borg AI",
     location: "N/A",
     personImage: RafaelBodego,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: BorgAi,
   },
   {
     name: "Samuel Hazak",
@@ -251,7 +274,7 @@ export const AttendeesData = [
     company: "Equanimity AI",
     location: "N/A",
     personImage: SamuelHazak,
-    companyImage: "https://via.placeholder.com/100",
+    companyImage: Equanimity,
   },
   {
     name: "Hicham El Hafed",
@@ -259,6 +282,38 @@ export const AttendeesData = [
     company: "Procys",
     location: "N/A",
     personImage: HichamElHafed,
-    companyImage: "https://via.placeholder.com/100",
-  }
+    companyImage: Procys,
+  },
+  {
+    name: "Naresh Prajapati",
+    position: "CEO",
+    company: "Azilen Technologies",
+    location: "N/A",
+    personImage: "NareshPrajapati",
+    companyImage: Azilen,
+  },
+  {
+    name: "Alex Polyakov",
+    position: "CEO",
+    company: "Adversa AI",
+    location: "N/A",
+    personImage: "AlexPolyakov",
+    companyImage: AdversaAI,
+  },
+  {
+    name: "Geeta Sham",
+    position: "Managing Director",
+    company: "CamCom",
+    location: "N/A",
+    personImage: Geeta,
+    companyImage: CamCom,
+  },
+  {
+    name: "Nevio Buric",
+    position: "CEO and Co-Founder",
+    company: "Daidream",
+    location: "N/A",
+    personImage: NevioBuric,
+    companyImage: Daidream,
+  },
 ];

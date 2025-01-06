@@ -27,7 +27,7 @@ const Information = () => {
         { opacity: 1, y: 0, duration: 0.7, stagger:0.2,  ease: 'power2.out', scrollTrigger: {
           trigger: ".fall-In",
           start: "top 80%",
-          markers:true,
+          // markers:true,
         }, }
       );
 
@@ -37,7 +37,7 @@ const Information = () => {
         { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: {
           trigger: ".climb-In",
           start: "top 80%",
-          markers:true,
+          // markers:true,
 
         }, }
       );
@@ -48,7 +48,7 @@ const Information = () => {
         { opacity: 1, x: 0, duration: 1,stagger:0.2, ease: 'power2.out', scrollTrigger: {
           trigger: ".slide-to-right",
           start: "top 80%",
-          markers:true,
+          // markers:true,
 
         }, }
       );
@@ -59,7 +59,7 @@ const Information = () => {
         { opacity: 1, x: 0, duration: 1, ease: 'power2.out', scrollTrigger: {
           trigger: ".slide-to-left",
           start: "top 80%",
-          markers:true,
+          // markers:true,
 
         }, }
       );
@@ -387,11 +387,11 @@ const Information = () => {
             }}
           >
             <div className="slide-to-right flex pt-24 pb-4 px-4">
-              <div className=" relative flex items-center w-60 h-56 rounded bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-center transform  lg:scale-100">
-                <p className="px-6 text-2xl text-white font-Archivo font-bold">
+              <div className=" relative flex items-center w-44 h-44 rounded bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-center transform  lg:scale-100">
+                <p className="px-6  text-xl text-white font-Archivo font-bold">
                   The AI Integration Excellence Award
                 </p>
-                <div className="brightness-120 absolute -top-24 -left-14 w-32">
+                <div className="brightness-120 absolute -top-16 -left-8 w-20">
                   <img src={AwardLogo} alt="Award logo" />
                 </div>
               </div>
